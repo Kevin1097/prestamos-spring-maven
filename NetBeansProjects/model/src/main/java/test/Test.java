@@ -8,7 +8,12 @@ package test;
 import javax.sql.DataSource;
 import pe.edu.upeu.maven30.config.AppConfig;
 import pe.edu.upeu.maven30.dao.PrestamoDAO;
+<<<<<<< Upstream, based on origin/master
 import pe.edu.upeu.maven30.dao.ReservaDAO;
+=======
+import pe.edu.upeu.maven30.dao.UsuarioDAO;
+import pe.edu.upeu.maven30.model.UsuarioDTO;
+>>>>>>> d77c265 Kevin Junior-Login
 
 /**
  *
@@ -20,8 +25,13 @@ public class Test {
      */
     public static void main(String[] args) {
 //        Conex();
+<<<<<<< Upstream, based on origin/master
         //Procedure_pedido();
         Procedure_reserva();
+=======
+//        pedido();
+Valida();
+>>>>>>> d77c265 Kevin Junior-Login
     }
    
     public static void Conex()
@@ -35,6 +45,19 @@ public class Test {
               System.out.println("no");
           }
   
+    }
+    public static void Valida()
+    {
+          DataSource as=AppConfig.getDataSource();
+
+        UsuarioDAO uo = new UsuarioDAO(as);
+        UsuarioDTO u = uo.Validar("joss", "12345");
+        
+        if (u != null){
+            System.out.println("si");
+        }else {
+            System.out.println("no");
+        }
     }
     
     public static void Procedure_pedido(){
