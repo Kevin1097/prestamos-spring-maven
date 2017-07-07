@@ -6,6 +6,8 @@
 package pe.edu.upeu.maven30.dao;
 
 import java.util.List;
+import javax.sql.DataSource;
+import org.springframework.jdbc.core.JdbcTemplate;
 import pe.edu.upeu.maven30.interfaces.Operaciones;
 import pe.edu.upeu.maven30.model.Detalle_PrestamoDTO;
 
@@ -14,6 +16,12 @@ import pe.edu.upeu.maven30.model.Detalle_PrestamoDTO;
  * @author Brandukosky
  */
 public class Detalle_PrestamoDAO implements Operaciones<Detalle_PrestamoDTO>{
+    
+     private JdbcTemplate jt;
+	
+	public Detalle_PrestamoDAO(DataSource dataSource) {
+		jt = new JdbcTemplate(dataSource);
+	}
 
     @Override
     public void saveOrUpdate(Detalle_PrestamoDTO e) {

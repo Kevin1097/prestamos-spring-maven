@@ -9,22 +9,22 @@ import java.util.List;
 import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import pe.edu.upeu.maven30.interfaces.Operaciones;
-import pe.edu.upeu.maven30.model.Opcion_RolDTO;
+import pe.edu.upeu.maven30.model.Usuario_RolDTO;
 
 /**
  *
  * @author Brandukosky
  */
-public class Opcion_RolDAO implements Operaciones<Opcion_RolDTO>{
-
+public class Usuario_RolDAO implements Operaciones<Usuario_RolDTO>{
+    
      private JdbcTemplate jt;
 	
-	public Opcion_RolDAO(DataSource dataSource) {
+	public Usuario_RolDAO(DataSource dataSource) {
 		jt = new JdbcTemplate(dataSource);
 	}
     
     @Override
-    public void saveOrUpdate(Opcion_RolDTO e) {
+    public void saveOrUpdate(Usuario_RolDTO e) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -34,12 +34,12 @@ public class Opcion_RolDAO implements Operaciones<Opcion_RolDTO>{
     }
 
     @Override
-    public Opcion_RolDTO read(int id) {
+    public Usuario_RolDTO read(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Opcion_RolDTO> list() {
+    public List<Usuario_RolDTO> list() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
