@@ -12,8 +12,8 @@ package pe.edu.upeu.maven30.model;
 public class DevolucionDTO {
     private String dev_estado;
     private String dev_fecha;
-    private String sa_id;
-    private String pre_id;
+    private int sa_id;
+    private int pre_id;
 
     public DevolucionDTO() {
     }
@@ -23,7 +23,7 @@ public class DevolucionDTO {
         this.dev_fecha = dev_fecha;
     }
 
-    public DevolucionDTO(String dev_estado, String dev_fecha, String sa_id, String pre_id) {
+    public DevolucionDTO(String dev_estado, String dev_fecha, int sa_id, int pre_id) {
         this.dev_estado = dev_estado;
         this.dev_fecha = dev_fecha;
         this.sa_id = sa_id;
@@ -46,20 +46,21 @@ public class DevolucionDTO {
         this.dev_fecha = dev_fecha;
     }
 
-    public String getSa_id() {
+    public int getSa_id() {
         return sa_id;
     }
 
-    public void setSa_id(String sa_id) {
+    public void setSa_id(int sa_id) {
         this.sa_id = sa_id;
     }
 
-    public String getPre_id() {
+    public int getPre_id() {
         return pre_id;
     }
 
-    public void setPre_id(String pre_id) {
+    public void setPre_id(int pre_id) {
         this.pre_id = pre_id;
     }
+    
     
 }

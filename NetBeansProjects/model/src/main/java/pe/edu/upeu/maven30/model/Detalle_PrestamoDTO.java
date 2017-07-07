@@ -12,22 +12,21 @@ package pe.edu.upeu.maven30.model;
 public class Detalle_PrestamoDTO {
     private String dpre_estado;
     private String descripcion;
-    private String pre_id;
-    private String equ_id;
+    private int pre_id;
+    private int equ_id;
 
     public Detalle_PrestamoDTO() {
+    }
+    public Detalle_PrestamoDTO(String dpre_estado, String descripcion, int pre_id, int equ_id) {
+        this.dpre_estado = dpre_estado;
+        this.descripcion = descripcion;
+        this.pre_id = pre_id;
+        this.equ_id = equ_id;
     }
 
     public Detalle_PrestamoDTO(String dpre_estado, String descripcion) {
         this.dpre_estado = dpre_estado;
         this.descripcion = descripcion;
-    }
-
-    public Detalle_PrestamoDTO(String dpre_estado, String descripcion, String pre_id, String equ_id) {
-        this.dpre_estado = dpre_estado;
-        this.descripcion = descripcion;
-        this.pre_id = pre_id;
-        this.equ_id = equ_id;
     }
 
     public String getDpre_estado() {
@@ -46,21 +45,21 @@ public class Detalle_PrestamoDTO {
         this.descripcion = descripcion;
     }
 
-    public String getPre_id() {
+    public int getPre_id() {
         return pre_id;
     }
 
-    public void setPre_id(String pre_id) {
+    public void setPre_id(int pre_id) {
         this.pre_id = pre_id;
     }
 
-    public String getEqu_id() {
+    public int getEqu_id() {
         return equ_id;
     }
 
-    public void setEqu_id(String equ_id) {
+    public void setEqu_id(int equ_id) {
         this.equ_id = equ_id;
     }
 
-    
+   
 }

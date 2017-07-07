@@ -9,7 +9,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import javax.sql.DataSource;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
 import pe.edu.upeu.maven30.interfaces.Operaciones;
 import pe.edu.upeu.maven30.model.EquipoDTO;
@@ -29,7 +31,7 @@ public class EquipoDAO implements Operaciones<EquipoDTO>{
     @Override
     public void saveOrUpdate(EquipoDTO e) {
         
-//        if (e.getId() > 0) {
+//        if (e.getEq_id() > 0) {
 //            // update
 //            String sql = "UPDATE contact SET name=?, email=?, address=?, "
 //                    + "telephone=? WHERE contact_id=?";
@@ -43,7 +45,7 @@ public class EquipoDAO implements Operaciones<EquipoDTO>{
 //                    contact.getAddress(), contact.getTelephone());
 //        }
 //    
-        
+//        
     }
 
     @Override
@@ -55,7 +57,30 @@ public class EquipoDAO implements Operaciones<EquipoDTO>{
 
     @Override
     public EquipoDTO read(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "SELECT * FROM EQUIPO WHERE EQ_ID=" + id;
+        return jt.query(sql, new ResultSetExtractor<EquipoDTO>() {
+
+            @Override
+            public EquipoDTO extractData(ResultSet rs) throws SQLException,
+                    DataAccessException {
+                if (rs.next()) {
+                    EquipoDTO eq = new EquipoDTO();
+                    eq.setEq_id(rs.getString("EQ_ID"));
+                    eq.setEq_marca(rs.getString("EQ_MARCA"));
+                    eq.setEq_serie(rs.getString("EQ_SERIE"));
+                    eq.setEq_tipo(rs.getString("EQ_TIPO"));
+                    eq.setEq_cantidad(rs.getInt("EQ_CANTIDAD"));
+                    eq.setEq_estado(rs.getString("EQ_ESTADO"));
+                    
+                    return eq;
+                }
+
+                return null;
+            }
+
+        });    
+    
+    
     }
 
     @Override
@@ -63,18 +88,16 @@ public class EquipoDAO implements Operaciones<EquipoDTO>{
     
         String sql = "SELECT * FROM contact";
         List<EquipoDTO> listContact = jt.query(sql, new RowMapper<EquipoDTO>() {
-
             @Override
             public EquipoDTO mapRow(ResultSet rs, int rowNum) throws SQLException {
                 EquipoDTO eq = new EquipoDTO();
-
                 eq.setEq_id(rs.getString("EQ_ID"));
-                eq.setName(rs.getString("name"));
-                eq.setEmail(rs.getString("email"));
-                eq.setAddress(rs.getString("address"));
-                eq.setTelephone(rs.getString("telephone"));
-
-                return aContact;
+                eq.setEq_marca(rs.getString("EQ_MARCA"));
+                eq.setEq_serie(rs.getString("EQ_SERIE"));
+                eq.setEq_tipo(rs.getString("EQ_TIPO"));
+                eq.setEq_cantidad(rs.getInt("EQ_CANTIDAD"));
+                eq.setEq_estado(rs.getString("EQ_ESTADO"));
+                return eq;
             }
 
         });

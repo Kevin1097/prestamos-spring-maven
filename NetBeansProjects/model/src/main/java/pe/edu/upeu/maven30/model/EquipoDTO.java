@@ -10,7 +10,7 @@ package pe.edu.upeu.maven30.model;
  * @author junio
  */
 public class EquipoDTO {
-    private String eq_id;
+    private int eq_id;
     private String eq_marca;
     private String eq_serie;
     private String eq_tipo;
@@ -28,7 +28,7 @@ public class EquipoDTO {
         this.eq_estado = eq_estado;
     }
 
-    public EquipoDTO(String eq_id, String eq_marca, String eq_serie, String eq_tipo, int eq_cantidad, String eq_estado) {
+    public EquipoDTO(int eq_id, String eq_marca, String eq_serie, String eq_tipo, int eq_cantidad, String eq_estado) {
         this.eq_id = eq_id;
         this.eq_marca = eq_marca;
         this.eq_serie = eq_serie;
@@ -37,11 +37,11 @@ public class EquipoDTO {
         this.eq_estado = eq_estado;
     }
 
-    public String getEq_id() {
+    public int getEq_id() {
         return eq_id;
     }
 
-    public void setEq_id(String eq_id) {
+    public void setEq_id(int eq_id) {
         this.eq_id = eq_id;
     }
 
@@ -84,5 +84,5 @@ public class EquipoDTO {
     public void setEq_estado(String eq_estado) {
         this.eq_estado = eq_estado;
     }
-    
+
 }
