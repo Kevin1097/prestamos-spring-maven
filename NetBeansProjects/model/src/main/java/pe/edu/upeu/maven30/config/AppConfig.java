@@ -44,7 +44,6 @@ public class AppConfig extends WebMvcConfigurerAdapter{
 		dataSource.setUrl("jdbc:oracle:thin:@192.168.1.110:1521:XE");
 		dataSource.setUsername("GrupoPrestamo");
 		dataSource.setPassword("GrupoPrestamo");
-		
 		return dataSource;
 	}
        
