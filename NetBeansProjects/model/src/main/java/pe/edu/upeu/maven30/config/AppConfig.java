@@ -15,6 +15,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import pe.edu.upeu.maven30.dao.PrestamoDAO;
+import pe.edu.upeu.maven30.dao.ReservaDAO;
 import pe.edu.upeu.maven30.interfaces.Operaciones;
 
 /**
@@ -41,10 +43,20 @@ public class AppConfig extends WebMvcConfigurerAdapter{
 	public static DataSource getDataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("oracle.jdbc.OracleDriver");
-		dataSource.setUrl("jdbc:oracle:thin:@192.168.1.110:1521:XE");
+		dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:XE");
 		dataSource.setUsername("GrupoPrestamo");
-		dataSource.setPassword("GrupoPrestamo");
+		dataSource.setPassword("grupoprestamo");
 		return dataSource;
 	}
        
+        @Bean
+	public PrestamoDAO getPrestamoDAO() {
+		return new PrestamoDAO(getDataSource());
+	}
+        
+        @Bean
+	public ReservaDAO getReservaDAO() {
+		return new ReservaDAO(getDataSource());
+	}
+
 }

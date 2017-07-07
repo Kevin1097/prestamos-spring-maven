@@ -43,6 +43,7 @@ public class ReservaDAO implements Operaciones<ReservaDTO>{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    
     public void reservas (String p_fechainicio  , String p_fechafin  , String p_usid  , String p_descripcion,
                           String p_estado  , String p_eq_id ){
         
@@ -50,12 +51,5 @@ public class ReservaDAO implements Operaciones<ReservaDTO>{
         jt.update(sql, p_fechainicio, p_fechafin , p_usid , p_descripcion , p_estado ,p_eq_id );
     }
     
-    
-//    //-----
-//    public void reservas (String p_fechainicio  , String p_fechafin  , String p_usid  , String p_descripcion,
-//                          String p_estado  , String p_eq_id ){
-//        
-//        String sql ="{CALL SP_REGISTRO_RESERVA ( ? , ? ,? ,? ,? ,? )}";
-//        jt.update(sql, p_fechainicio, p_fechafin , p_usid , p_descripcion , p_estado ,p_eq_id );
-//    }
+   
 }

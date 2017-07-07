@@ -8,6 +8,7 @@ package test;
 import javax.sql.DataSource;
 import pe.edu.upeu.maven30.config.AppConfig;
 import pe.edu.upeu.maven30.dao.PrestamoDAO;
+import pe.edu.upeu.maven30.dao.ReservaDAO;
 
 /**
  *
@@ -19,7 +20,8 @@ public class Test {
      */
     public static void main(String[] args) {
 //        Conex();
-        pedido();
+        //Procedure_pedido();
+        Procedure_reserva();
     }
    
     public static void Conex()
@@ -35,17 +37,30 @@ public class Test {
   
     }
     
-    public static void pedido(){
+    public static void Procedure_pedido(){
         String idusuario = "2";
         String idprod = "1";
         int cant = 2;
         String Lugar = "Lab8";
-        String fecha = "07/07/17";
+        String fecha = "05/07/17";
         String dess = "fui agregado con call";
         String estado = "bueno";
          DataSource as=AppConfig.getDataSource();
         PrestamoDAO a =new PrestamoDAO(as);
         a.Prestamo(idusuario, idprod, cant, Lugar, fecha, dess, estado);
-        //jt.update(sql, idUsuario, idProdcuto , cantidad , lugar , fecha ,dess , estado );
     } 
+     
+    public static  void Procedure_reserva (){
+        String fechaIn = "07/07/17";
+        String fchafin ="10/07/17";
+        String p_usid = "2";
+        String p_des ="esto fue insertado por procedure hoy";
+        String p_estado ="susscessful";
+        String p_eq ="1";        
+        DataSource as=AppConfig.getDataSource();
+        ReservaDAO r = new ReservaDAO(as);
+        r.reservas(fechaIn, fchafin, p_usid, p_des, p_estado, p_eq);
+         //jt.update(sql, p_fechainicio, p_fechafin , p_usid , p_descripcion , p_estado ,p_eq_id );
+    }
+    
 }
