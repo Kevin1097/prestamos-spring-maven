@@ -43,6 +43,12 @@ public class Detalle_ReservaDAO implements Operaciones<DetalleReservaDTO>{
     public List<DetalleReservaDTO> list() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    
+    
+
+     
+//BUSCAMO EL DETALLE DE LAS RESERVAS 
     public List<Map<String, Object>> DRESERVAS(int id) {
         String sql = "SELECT R.RE_ID , R.RE_FECHINICIO ,R.RE_FECHFIN , EQ.EQ_TIPO ,EQ.EQ_MARCA ,DR.DRE_DESCRIPCION ,DR.DRE_ESTADO\n" +
                         "FROM DETALLE_RESERVA DR , RESERVA R , EQUIPO EQ \n" +

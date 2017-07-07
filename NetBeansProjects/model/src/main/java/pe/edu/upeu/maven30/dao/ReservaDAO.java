@@ -6,6 +6,7 @@
 package pe.edu.upeu.maven30.dao;
 
 import java.util.List;
+import java.util.Map;
 import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import pe.edu.upeu.maven30.interfaces.Operaciones;
@@ -50,6 +51,17 @@ public class ReservaDAO implements Operaciones<ReservaDTO>{
         String sql ="{CALL SP_REGISTRO_RESERVA ( ? , ? ,? ,? ,? ,? )}";
         jt.update(sql, p_fechainicio, p_fechafin , p_usid , p_descripcion , p_estado ,p_eq_id );
     }
-    
    
+
+// RELIAZAMOS LISTAR DE LAS RESERVAS GENERALES 
+         public List<Map<String, Object>> RESERVASGENERALES() {
+                     String sql = "SELECT R.RE_ID , U.US_NOMBRES , U.US_APELLIDOS , R.RE_FECHINICIO , R.RE_FECHFIN\n" +
+                                                     "FROM RESERVA R, USUARIO U  \n" +
+                                                     "WHERE R.US_ID = U.US_ID ; ";
+                             return jt.queryForList(sql);
+         }
+
+
+
+
 }
