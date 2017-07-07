@@ -43,4 +43,13 @@ public class PrestamoDAO implements Operaciones<PrestamoDTO>{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    
+    
+    public void Prestamo(String idUsuario , String idProdcuto , int cantidad , String lugar , String fecha , String dess
+                         , String estado ){
+        
+        String sql ="CALL SP_REGISTRO_PRESTAMO ( ? , ? , ?  ,  ? ,  ? ,?  ,?  )";
+        jt.update(sql, idUsuario, idProdcuto , cantidad , lugar , fecha ,dess , estado );
+    }
+    
 }
