@@ -19,11 +19,6 @@ public class ReservaDTO {
     public ReservaDTO() {
     }
 
-    public ReservaDTO(String re_fechainicio, String re_fechafin) {
-        this.re_fechainicio = re_fechainicio;
-        this.re_fechafin = re_fechafin;
-    }
-
     public ReservaDTO(String re_fechainicio, String re_fechafin, int us_id) {
         this.re_fechainicio = re_fechainicio;
         this.re_fechafin = re_fechafin;
@@ -35,6 +30,11 @@ public class ReservaDTO {
         this.re_fechainicio = re_fechainicio;
         this.re_fechafin = re_fechafin;
         this.us_id = us_id;
+    }
+
+    public ReservaDTO(String re_fechainicio, String re_fechafin) {
+        this.re_fechainicio = re_fechainicio;
+        this.re_fechafin = re_fechafin;
     }
 
     public int getRe_id() {
@@ -68,5 +68,7 @@ public class ReservaDTO {
     public void setUs_id(int us_id) {
         this.us_id = us_id;
     }
+
+    
     
 }
