@@ -65,7 +65,7 @@ public class EquipoDAO implements Operaciones<EquipoDTO>{
                     DataAccessException {
                 if (rs.next()) {
                     EquipoDTO eq = new EquipoDTO();
-                    eq.setEq_id(rs.getString("EQ_ID"));
+                    //eq.setEq_id(rs.("EQ_ID"));
                     eq.setEq_marca(rs.getString("EQ_MARCA"));
                     eq.setEq_serie(rs.getString("EQ_SERIE"));
                     eq.setEq_tipo(rs.getString("EQ_TIPO"));
