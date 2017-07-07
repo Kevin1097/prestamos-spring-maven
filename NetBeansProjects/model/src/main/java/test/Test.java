@@ -8,14 +8,12 @@ package test;
 import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import pe.edu.upeu.maven30.config.AppConfig;
-import pe.edu.upeu.maven30.dao.VentaDAO;
 
 /**
  *
  * @author junio
  */
 public class Test {
-private static VentaDAO vO;
     /**
      * @param args the command line arguments
      */

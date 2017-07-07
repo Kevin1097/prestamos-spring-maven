@@ -15,9 +15,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
-import pe.edu.upeu.maven30.dao.DetalleDAO;
-import pe.edu.upeu.maven30.dao.RolDAO;
-import pe.edu.upeu.maven30.dao.VentaDAO;
 import pe.edu.upeu.maven30.interfaces.Operaciones;
 
 /**
@@ -50,16 +47,5 @@ public class AppConfig extends WebMvcConfigurerAdapter{
 		
 		return dataSource;
 	}
-        @Bean
-	public RolDAO getRolDAO() {
-		return new RolDAO(getDataSource());
-	}
-        @Bean
-        public VentaDAO getVentaDAO() {
-		return new VentaDAO(getDataSource());
-	}
-        @Bean
-        public DetalleDAO getDetalleDAO() {
-		return new DetalleDAO(getDataSource());
-	}
+       
 }
