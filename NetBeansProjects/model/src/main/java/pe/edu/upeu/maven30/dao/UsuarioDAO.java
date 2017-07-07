@@ -25,7 +25,14 @@ public class UsuarioDAO implements Operaciones<UsuarioDTO>{
     
     @Override
     public void saveOrUpdate(UsuarioDTO e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (e.getUs_id()>0) {
+            
+        }
+        else
+        {
+            String sql="CALL SP_REGISTRO_USER(?,?,?,?,?,?)";
+            jt.update(sql, e.getUs_nombres(),e.getUs_apellidos(),e.getUs_dni(),e.getUs_celular(),e.getUs_user(),e.getUs_clave());
+        }
     }
 
     @Override
@@ -42,5 +49,5 @@ public class UsuarioDAO implements Operaciones<UsuarioDTO>{
     public List<UsuarioDTO> list() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+     
 }
