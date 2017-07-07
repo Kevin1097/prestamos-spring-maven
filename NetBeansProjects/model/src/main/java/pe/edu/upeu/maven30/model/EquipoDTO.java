@@ -10,17 +10,17 @@ package pe.edu.upeu.maven30.model;
  * @author junio
  */
 public class EquipoDTO {
-    private int eq_id;
+    private String eq_id;
     private String eq_marca;
     private String eq_serie;
     private String eq_tipo;
-    private String eq_cantidad;
+    private int eq_cantidad;
     private String eq_estado;
 
     public EquipoDTO() {
     }
 
-    public EquipoDTO(String eq_marca, String eq_serie, String eq_tipo, String eq_cantidad, String eq_estado) {
+    public EquipoDTO(String eq_marca, String eq_serie, String eq_tipo, int eq_cantidad, String eq_estado) {
         this.eq_marca = eq_marca;
         this.eq_serie = eq_serie;
         this.eq_tipo = eq_tipo;
@@ -28,7 +28,7 @@ public class EquipoDTO {
         this.eq_estado = eq_estado;
     }
 
-    public EquipoDTO(int eq_id, String eq_marca, String eq_serie, String eq_tipo, String eq_cantidad, String eq_estado) {
+    public EquipoDTO(String eq_id, String eq_marca, String eq_serie, String eq_tipo, int eq_cantidad, String eq_estado) {
         this.eq_id = eq_id;
         this.eq_marca = eq_marca;
         this.eq_serie = eq_serie;
@@ -37,11 +37,11 @@ public class EquipoDTO {
         this.eq_estado = eq_estado;
     }
 
-    public int getEq_id() {
+    public String getEq_id() {
         return eq_id;
     }
 
-    public void setEq_id(int eq_id) {
+    public void setEq_id(String eq_id) {
         this.eq_id = eq_id;
     }
 
@@ -69,11 +69,11 @@ public class EquipoDTO {
         this.eq_tipo = eq_tipo;
     }
 
-    public String getEq_cantidad() {
+    public int getEq_cantidad() {
         return eq_cantidad;
     }
 
-    public void setEq_cantidad(String eq_cantidad) {
+    public void setEq_cantidad(int eq_cantidad) {
         this.eq_cantidad = eq_cantidad;
     }
 
@@ -84,6 +84,5 @@ public class EquipoDTO {
     public void setEq_estado(String eq_estado) {
         this.eq_estado = eq_estado;
     }
-    
     
 }

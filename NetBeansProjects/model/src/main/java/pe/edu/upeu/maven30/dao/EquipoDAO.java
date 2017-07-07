@@ -68,13 +68,13 @@ public class EquipoDAO implements Operaciones<EquipoDTO>{
             public EquipoDTO mapRow(ResultSet rs, int rowNum) throws SQLException {
                 EquipoDTO eq = new EquipoDTO();
 
-//                eq.(rs.getInt("contact_id"));
-//                eq.setName(rs.getString("name"));
-//                eq.setEmail(rs.getString("email"));
-//                eq.setAddress(rs.getString("address"));
-//                eq.setTelephone(rs.getString("telephone"));
-//
-//                return aContact;
+                eq.setEq_id(rs.getString("EQ_ID"));
+                eq.setName(rs.getString("name"));
+                eq.setEmail(rs.getString("email"));
+                eq.setAddress(rs.getString("address"));
+                eq.setTelephone(rs.getString("telephone"));
+
+                return aContact;
             }
 
         });

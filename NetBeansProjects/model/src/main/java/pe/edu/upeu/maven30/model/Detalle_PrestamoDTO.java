@@ -12,8 +12,8 @@ package pe.edu.upeu.maven30.model;
 public class Detalle_PrestamoDTO {
     private String dpre_estado;
     private String descripcion;
-    private int pre_id;
-    private int equ_id;
+    private String pre_id;
+    private String equ_id;
 
     public Detalle_PrestamoDTO() {
     }
@@ -23,7 +23,7 @@ public class Detalle_PrestamoDTO {
         this.descripcion = descripcion;
     }
 
-    public Detalle_PrestamoDTO(String dpre_estado, String descripcion, int pre_id, int equ_id) {
+    public Detalle_PrestamoDTO(String dpre_estado, String descripcion, String pre_id, String equ_id) {
         this.dpre_estado = dpre_estado;
         this.descripcion = descripcion;
         this.pre_id = pre_id;
@@ -46,20 +46,21 @@ public class Detalle_PrestamoDTO {
         this.descripcion = descripcion;
     }
 
-    public int getPre_id() {
+    public String getPre_id() {
         return pre_id;
     }
 
-    public void setPre_id(int pre_id) {
+    public void setPre_id(String pre_id) {
         this.pre_id = pre_id;
     }
 
-    public int getEqu_id() {
+    public String getEqu_id() {
         return equ_id;
     }
 
-    public void setEqu_id(int equ_id) {
+    public void setEqu_id(String equ_id) {
         this.equ_id = equ_id;
     }
+
     
 }

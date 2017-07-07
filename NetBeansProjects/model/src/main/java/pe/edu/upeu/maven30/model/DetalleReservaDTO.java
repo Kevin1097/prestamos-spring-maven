@@ -12,19 +12,18 @@ package pe.edu.upeu.maven30.model;
 public class DetalleReservaDTO {
     private String dre_descripcion;
     private String dre_estado;
-    private int re_id;
-    private int eq_id;
+    private String re_id;
+    private String eq_id;
 
     public DetalleReservaDTO() {
     }
 
-    
     public DetalleReservaDTO(String dre_descripcion, String dre_estado) {
         this.dre_descripcion = dre_descripcion;
         this.dre_estado = dre_estado;
     }
 
-    public DetalleReservaDTO(String dre_descripcion, String dre_estado, int re_id, int eq_id) {
+    public DetalleReservaDTO(String dre_descripcion, String dre_estado, String re_id, String eq_id) {
         this.dre_descripcion = dre_descripcion;
         this.dre_estado = dre_estado;
         this.re_id = re_id;
@@ -47,20 +46,22 @@ public class DetalleReservaDTO {
         this.dre_estado = dre_estado;
     }
 
-    public int getRe_id() {
+    public String getRe_id() {
         return re_id;
     }
 
-    public void setRe_id(int re_id) {
+    public void setRe_id(String re_id) {
         this.re_id = re_id;
     }
 
-    public int getEq_id() {
+    public String getEq_id() {
         return eq_id;
     }
 
-    public void setEq_id(int eq_id) {
+    public void setEq_id(String eq_id) {
         this.eq_id = eq_id;
     }
+
+    
     
 }
