@@ -3,7 +3,7 @@
     Created on : 13/06/2017, 07:20:56 PM
     Author     : UPEU
 --%>
-<%--
+<
 <%
      HttpSession sesion = request.getSession();
     if(sesion.getAttribute("user") == null){
@@ -11,7 +11,7 @@
 
 }else{
         
-%>--%>
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

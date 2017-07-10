@@ -24,18 +24,18 @@ import pe.edu.upeu.maven30.model.UsuarioDTO;
  */
 @Controller
 public class HomeController {
+    @Autowired
     private static UsuarioDAO uO;
-@Autowired
-    @RequestMapping(value="/")
-    public String main(){	
-            return "main";
-    }
+//    @RequestMapping(value="/")
+//    public String main(){	
+//            return "main";
+//    }
     @RequestMapping(value="/kk")
     public String ListarRol(){	
             return "ListarRol";
     }
     
-    @RequestMapping(value="/login")
+    @RequestMapping(value="/")
     public String login(){	
             return "login";
     }
@@ -43,8 +43,9 @@ public class HomeController {
         public ModelAndView Logueo(ModelAndView model ,HttpServletRequest resquest, HttpServletResponse response){
             String user = resquest.getParameter("user");
             String Pass = resquest.getParameter("pass");
-            UsuarioDTO d= new UsuarioDTO();
+            UsuarioDTO d = new UsuarioDTO();
             HttpSession sesion = resquest.getSession();
+            
             d =uO.Validar(user, Pass);
              if (d != null ) {
                  resquest.getSession().setAttribute("user", d);

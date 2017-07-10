@@ -77,6 +77,16 @@
             <scope>provided</scope>
         </dependency>
 
+            
+            
+        <!-- https://mvnrepository.com/artifact/org.apache.archiva.redback.components.cache/spring-cache-hashmap -->
+        <dependency>
+            <groupId>org.apache.archiva.redback.components.cache</groupId>
+            <artifactId>spring-cache-hashmap</artifactId>
+            <version>2.2</version>
+        </dependency>
+ 
+
     </dependencies>
 
     <build>

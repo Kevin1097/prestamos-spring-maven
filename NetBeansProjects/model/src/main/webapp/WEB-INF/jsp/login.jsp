@@ -3,9 +3,9 @@
     Created on : 07/07/2017, 09:44:17 AM
     Author     : junio
 --%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,19 +19,21 @@
         
             <div class="container" style="background-color: #ccccff; padding: 2px;margin: 0 auto;width: 400px; margin-top: 10%;">
                 <div class="wrapper" style="padding: 60px;">
-                    <form:form action="loguea" class="form-signin" method="post">       
-        <h2 class="form-signin-heading" style="text-align: center;">Bienvenido ! ! !</h2>
-         <h4 class="form-signin-heading" style="text-align: center;">Sistema de prestamo de equipos de la UPeU</h4>
+                    <form:form action="loguea" method="post" modelAttribute="user">      
+                        
+                        <h2 class="form-signin-heading" style="text-align: center;">Bienvenido ! ! !</h2>
+                        <h4 class="form-signin-heading" style="text-align: center;">Sistema de prestamo de equipos de la UPeU</h4>
 
-      <input type="text" class="form-control" name="user" placeholder="Usuario" required="" autofocus="" />
-      <br>
-      <input type="password" class="form-control" name="pass" placeholder="Contraseña" required=""/>      
-      <label class="checkbox">
-        
-      </label>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
-    </form>
-  </div>
+                      <input type="text" class="form-control" name="user" placeholder="Usuario" required="" autofocus="" />
+                      <br>
+                      <input type="password" class="form-control" name="pass" placeholder="Contraseña" required=""/>      
+                      <label class="checkbox">
+
+                      </label>
+                      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
+                      
+                    </form:form>
+                </div>
             </div>
         
 
